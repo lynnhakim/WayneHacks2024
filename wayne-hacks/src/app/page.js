@@ -26,10 +26,10 @@ export default function Home() {
   );
 }
 
-function Button({ Title }, { url }) {
+function Button({ Title, url }) {
   return (
     <div className="">
-      <button>
+      <button class="">
         <a href={url}>{Title}</a>
       </button>
     </div>
