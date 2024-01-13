@@ -13,6 +13,7 @@
     "@heroicons/react": "^2.1.1",
     "@uiw/codemirror-extensions-langs": "^4.21.21",
     "@uiw/react-codemirror": "^4.21.21",
+    "clerk": "^0.8.3",
     "codemirror": "^6.0.1",
     "next": "^14.0.4",
     "react": "^18",
