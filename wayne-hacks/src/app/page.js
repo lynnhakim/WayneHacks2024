@@ -9,24 +9,28 @@ export default function Home() {
         <Navbar />
       </div>
       <div className="flex textalign-center space-x-5">
-        <Button Title="Print" url="/Print">
-          Print
-        </Button>
-        <Button Title="Variables" url="/Variables">
-          Variables
-        </Button>
-        <Button Title="Loops" url="/Loops">
-          Loops
-        </Button>
-        <Button Title="Challenge1" url="/Challenge1">
-          Challenge 1
-        </Button>
+      <a href="/Print">
+        <Button Title="Print">Print</Button>
+          </a>
+
+      <a href="/Variables">
+        <Button Title="Variables" >Variables</Button>
+          </a>
+
+      <a href="/Loops">
+        <Button Title="Loops"> Loops </Button>
+          </a>
+        
+      <a href="/Challenge1">
+        <Button Title="Challenge1"> Challenge1 </Button>
+        </a>
+
       </div>
     </div>
   );
 }
 
-function Button({ Title }, { url }) {
+function Button({ Title, url }) {
   return (
     <div className="">
       <button>
