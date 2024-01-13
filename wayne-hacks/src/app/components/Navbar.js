@@ -1,5 +1,4 @@
 import { HomeIcon } from "@heroicons/react/24/solid";
-import { UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
@@ -18,7 +17,7 @@ export default function Navbar() {
         </a>
         <a href="/Profile">
           <p className="hidden md:block mx-3 text-gray font-bold hover:underline cursor-pointer">
-            <UserButton afterSignOutUrl="/" />
+            Profile
           </p>
         </a>
       </div>
