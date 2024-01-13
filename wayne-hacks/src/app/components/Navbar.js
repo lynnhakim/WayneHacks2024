@@ -18,6 +18,7 @@ export default function Navbar() {
         </a>
         <a href="/Profile">
           <p className="hidden md:block mx-3 text-gray font-bold hover:underline cursor-pointer">
+            Profile
           </p>
         </a>
       </div>
