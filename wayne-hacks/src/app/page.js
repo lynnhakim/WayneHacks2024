@@ -46,7 +46,7 @@ export default function Home() {
           </a>
         
       <a href="/Challenge1">
-        <Button Title="Challenge1" >Challenge1 </Button>
+        <Button Title="Challenge 1" >Challenge1 </Button>
         </a>
 
       </div>
@@ -72,7 +72,7 @@ export default function Home() {
           </a>
         
       <a href="/Challenge2">
-        <Button Title="     Challenge2"> Challenge2 </Button>
+        <Button Title="     Challenge 2"> Challenge 2 </Button>
         </a>
 
       </div>
@@ -99,7 +99,7 @@ export default function Home() {
           </a>
         
       <a href="/Challenge3">
-        <Button Title="Challenge3"> Challenge3 </Button>
+        <Button Title="Challenge 3"> Challenge 3 </Button>
         </a>
 
       </div>
