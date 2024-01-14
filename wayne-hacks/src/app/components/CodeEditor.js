@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
 
-export default function CodeEditor({correctAnswer, points}) {
+
+export default function CodeEditor() {
   const [value, setValue] = useState("");
   const [codeResult, setCodeResult] = useState("");
   const [success, setSuccess] = useState(false);
@@ -71,9 +72,10 @@ export default function CodeEditor({correctAnswer, points}) {
         theme="dark"
         extensions={[loadLanguage("python")]}
         onChange={onChange}
+        style={{ fontSize: '20px' }}
       />
       <button onClick={runCode} style={{padding: '5px', backgroundColor: 'black', color: 'green' }}>Run Code</button>
-      <div className="bg-black h-screen">
+      <div className="bg-black h-60 w-screen">
         <h3 style={{fontSize: '18px', padding: '5px', color: 'green' }}>Result:</h3>
         <div className="m-1 text-white">{codeResult}</div>
         {success ? <p>"Well Done!"</p>: 
