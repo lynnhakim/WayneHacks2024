@@ -1,7 +1,7 @@
 const data = [
 	{ name: "Shawi", age: 20, score: "0" },
-	{ name: "Merwin", age: 19, score: "1" },
-	{ name: "Lynn", age: 19, score: "-500" },
+	{ name: "Merwin", age: 19, score: "0" },
+	{ name: "Lynn", age: 19, score: "0" },
     { name: "Hayley", age: 20, score: "0" },
 ]
 
