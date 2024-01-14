@@ -4,7 +4,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
 
 
-export default function CodeEditor() {
+export default function CodeEditor({printme}) {
   const [value, setValue] = useState("");
   const [codeResult, setCodeResult] = useState("");
   const [success, setSuccess] = useState(false);
@@ -56,8 +56,7 @@ export default function CodeEditor() {
   }
 
   useEffect(() => {
-    if (codeResult && codeResult.substring(correctAnswer)) {
-      setCount(count + points);
+    if (codeResult) {
       setSuccess(true);
     }
     console.log(codeResult);
@@ -78,9 +77,7 @@ export default function CodeEditor() {
       <div className="bg-black h-60 w-screen">
         <h3 style={{fontSize: '18px', padding: '5px', color: 'green' }}>Result:</h3>
         <div className="m-1 text-white">{codeResult}</div>
-        {success ? <p>"Well Done!"</p>: 
-        codeResult}
-        <button className="button-q">Submit</button>
+        <button className="button-q" onClick={() => <p>{printme}</p>}>Submit</button>
       </div>
     </div>
   );

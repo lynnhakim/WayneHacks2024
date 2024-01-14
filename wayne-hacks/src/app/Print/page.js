@@ -11,7 +11,7 @@ export default function Print() {
     </div>
       <h2 className=" font-bold text-lg "> Oh no! A human is blocking your way. You must defeat him by telling him to go away.</h2>
       <h3>Print "Go Away!" to save yourself and get 1 point</h3>
-        <CodeEditor correctAnswer="go away!" points={1} />
+        <CodeEditor printme="Good job!"/>
     </div>
   );
 }
