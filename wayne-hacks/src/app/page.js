@@ -36,7 +36,11 @@ export default function Home() {
           </a>
         
       <a href="/Challenge1">
+<<<<<<< HEAD
         <Button Title="     Challenge1"> Challenge1 </Button>
+=======
+        <Button Title="Challenge1" >Challenge1 </Button>
+>>>>>>> refs/remotes/origin/login-branch
         </a>
 
       </div>
@@ -103,7 +107,11 @@ export default function Home() {
 function Button({ Title }) {
   return (
     <div className="">
+<<<<<<< HEAD
       <button class="">
+=======
+      <button className="">
+>>>>>>> refs/remotes/origin/login-branch
         {Title}
       </button>
     </div>
