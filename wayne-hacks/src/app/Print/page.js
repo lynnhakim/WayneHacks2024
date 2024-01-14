@@ -1,9 +1,12 @@
+import CodeEditor from "../components/CodeEditor";
 
 export default function Print() {
   return (
     <div>
-      <h2 className="font-bold text-lg text-white">Question 1: Print</h2>
-        <h3 className="text-white ">Print "Hello World"</h3>
+      <h2 className=" font-bold text-lg "> Oh no! A human is blocking your way. You must defeat him by telling him to go away</h2>
+        <h3>Print "Go Away!" to save yourself and get 1 point</h3>
+        <CodeEditor />
+
     </div>
   );
 }
