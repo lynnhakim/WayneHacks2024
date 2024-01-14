@@ -1,12 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 
 export default function Home() {
+  const[count, setCount] = useState(0);
+
+    useEffect(() => {
+        // Retrieve count from local storage on component mount
+        const storedCount = localStorage.getItem('count');
+        if (storedCount) {
+          setCount(parseInt(storedCount));
+        }
+      }, []);
+
   return (
     <div>
       <div>
-        <Navbar />
+      <Navbar Score={count} />
       </div>
       <div className="flex textalign-center space-x-5">
       <a href="/Print">
@@ -30,11 +40,11 @@ export default function Home() {
   );
 }
 
-function Button({ Title, url }) {
+function Button({ Title }) {
   return (
-    <div className="">
+    <div className="button-q">
       <button class="">
-        <a href={url}>{Title}</a>
+        {Title}
       </button>
     </div>
   );
