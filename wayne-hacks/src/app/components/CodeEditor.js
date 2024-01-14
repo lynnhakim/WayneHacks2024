@@ -7,11 +7,7 @@ export default function CodeEditor() {
   const [value, setValue] = useState("");
   const [result, setResult] = useState("");
 
-  const onChange = (val) => {
-    setValue(val);
-  };
-
-  return (
+   return (
     <div>
       <CodeMirror
         value={value}
@@ -19,11 +15,10 @@ export default function CodeEditor() {
         width="700px"
         theme="dark"
         extensions={[loadLanguage("python")]}
-        onChange={onChange}
       />
-      <button>Run Code</button>
-      <div>
-        <h3>Result:</h3>
+      <button style={{ padding: '5px', backgroundColor: 'black', color: 'green' }}>Run Code</button>
+      <div className="h-screen">
+        <h3 style={{ fontSize: '18px', padding: '5px', color: 'green' }}>Result:</h3>
         <pre>{result}</pre>
       </div>
     </div>

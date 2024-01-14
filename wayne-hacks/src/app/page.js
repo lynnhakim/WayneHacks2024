@@ -22,7 +22,7 @@ export default function Home() {
           </a>
         
       <a href="/Challenge1">
-        <Button Title="Challenge1"> Challenge1 </Button>
+        <Button Title="Challenge1" >Challenge1 </Button>
         </a>
 
       </div>
@@ -30,11 +30,11 @@ export default function Home() {
   );
 }
 
-function Button({ Title, url }) {
+function Button({ Title }) {
   return (
     <div className="">
-      <button class="">
-        <a href={url}>{Title}</a>
+      <button className="">
+        {Title}
       </button>
     </div>
   );
