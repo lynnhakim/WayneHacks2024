@@ -1,5 +1,4 @@
 # WayneHacks2024
-Refer to login-branch for official project.
 
 # Project Information 
 Title: CodeDragon
