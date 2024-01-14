@@ -1,15 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
 
-export default function CodeEditor() {
+export default function CodeEditor({correctAnswer, points}) {
   const [value, setValue] = useState("");
-  const [result, setResult] = useState("");
+  const [codeResult, setCodeResult] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const onChange = (val) => {
     setValue(val);
   };
+
+  const [count, setCount] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("count");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("count", JSON.stringify(count));
+  }, [count]);
 
   const runCode = async () => {
     const url = 'https://python-3-code-compiler.p.rapidapi.com/';
@@ -30,11 +43,24 @@ export default function CodeEditor() {
     try {
       const response = await fetch(url, options);
       const result = await response.json();
-      setResult(result.output); // Set the result state with the API response
+      if (result.output !== undefined) {
+        setCodeResult(result.output); // Set the result state with the API response
+        
+      } else {
+        console.log("API response is undefined");
+      }
     } catch (error) {
       console.error(error);
     }
   }
+
+  useEffect(() => {
+    if (codeResult && codeResult.substring(correctAnswer)) {
+      setCount(count + points);
+      setSuccess(true);
+    }
+    console.log(codeResult);
+  },[codeResult])
 
   return (
     <div>
@@ -49,7 +75,10 @@ export default function CodeEditor() {
       <button onClick={runCode} style={{padding: '5px', backgroundColor: 'black', color: 'green' }}>Run Code</button>
       <div className="bg-black h-screen">
         <h3 style={{fontSize: '18px', padding: '5px', color: 'green' }}>Result:</h3>
-        <div className="m-1 text-white">{result}</div>
+        <div className="m-1 text-white">{codeResult}</div>
+        {success ? <p>"Well Done!"</p>: 
+        codeResult}
+        <button className="button-q">Submit</button>
       </div>
     </div>
   );

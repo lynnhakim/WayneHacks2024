@@ -5,33 +5,18 @@ import Navbar from "../components/Navbar";
 
 export default function Variables(){
 
-    const [count, setCount] = useState(() => {
-        // getting stored value
-        const saved = localStorage.getItem("count");
-        const initialValue = JSON.parse(saved);
-        return initialValue || "";
-      });
 
-      useEffect(() => {
-        // storing input name
-        localStorage.setItem("count", JSON.stringify(count));
-      }, [count]);
-    
-    const increment = () => {
-        setCount(count + 3);
-    }
     return (
         <>
         <div>
             
     <div>
-      <Navbar Score={count} />
+      <Navbar />
     </div>
         
         <h1 className="font-bold text-lg text-white">A guard apears in front of you! He won't let you pass unless you follow his instructions. He asks you the following:</h1>
-        <h3 className="text-white"> Create 3 variables of the following types: int, bool, string and get 2 points! </h3>
-        <CodeEditor />
-        <a href= "/"><button className="button-q" onClick={() => increment()}>Submit</button></a>
+        <h3 className="text-white"> Create a variable called "password," equal to zero, convert it to int, bool, and string, and you will get 2 points! </h3>
+        <CodeEditor correctAnswer="password = 0 bool(password) string(password)"/>
         </div>
 
        

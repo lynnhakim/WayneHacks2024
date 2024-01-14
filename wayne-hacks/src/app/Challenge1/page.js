@@ -5,31 +5,14 @@ import Navbar from "../components/Navbar";
 
 export default function Challenge1({Score}) {
 
-      const [count, setCount] = useState(() => {
-        // getting stored value
-        const saved = localStorage.getItem("count");
-        const initialValue = JSON.parse(saved);
-        return initialValue || "";
-      });
-
-      useEffect(() => {
-        // storing input name
-        localStorage.setItem("count", JSON.stringify(count));
-      }, [count]);
-    
-    const increment = () => {
-        setCount(count + 5);
-    }
-
   return (
     <div>
         <div>
-          <Navbar Score={count} />
+          <Navbar />
         </div>
-       <h2 className="font-bold text-lg ">You made it home safely! But your family wants to make sure you're not an imposter so they give you a task only you would know how to do solve</h2>
+       <h2 className="font-bold text-lg ">You made it home safely! But your family wants to make sure you're not an imposter so they give you a task only you would know how to solve.</h2>
        <h3>Create an ascending number staircase with 10 rows and we will give you 5 points! </h3>
-      <CodeEditor />
-        <a href="/"><button className="button-q" onClick={() => increment()}>Submit</button></a>
+      <CodeEditor correctAnswer="1 12 123 1234 12345 123456 1234567 12345678 123456789 12345687910" points={5}/>
     </div>
   );
 }
